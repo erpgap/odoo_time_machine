@@ -1,6 +1,6 @@
 # Time Machine
 
-Time Machine is an Odoo 19 module that shifts Odoo's perceived current date and time by a whole-number month offset.
+Time Machine is an Odoo 18 module that shifts Odoo's perceived current date and time by a whole-number month offset.
 
 It is meant to be simple: move Odoo backward or forward by `N` months, and let time continue progressing normally from that shifted point.
 
