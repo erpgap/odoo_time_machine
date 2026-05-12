@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_time_machine" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.time.machine</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//app[@name='general_settings']" position="inside">
+                <block title="Time Machine" name="time_machine_settings_block">
+                    <setting id="time_machine_setting" string="Fake current time" help="Shift Odoo into the past or future for demos and testing.">
+                        <field name="time_machine_enabled"/>
+                        <div class="content-group mt16" invisible="not time_machine_enabled">
+                            <div class="row mt16">
+                                <label for="time_machine_months" class="col-lg-3 o_light_label" string="Month offset"/>
+                                <div class="col-lg-9 d-flex gap-3 flex-wrap align-items-center">
+                                    <field name="time_machine_months" class="w-auto"/>
+                                    <span class="text-muted">Use a negative value to go into the past and a positive value to go into the future.</span>
+                                </div>
+                            </div>
+                            <div class="mt8 text-muted">
+                                Environment variable also works: ODOO_FAKE_TIME_MONTHS.
+                            </div>
+                        </div>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>
